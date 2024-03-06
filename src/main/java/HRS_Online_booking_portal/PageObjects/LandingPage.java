@@ -71,11 +71,10 @@ WebDriver driver;
 		Checkin.click();
 	}
 	
-	public void SelectDate(String Checkindate,String CheckOutDates) throws InterruptedException
+	public void SelectDate() throws InterruptedException
 	{
 		
 		Thread.sleep(2000);
-		Checkin.click();
 		Checkout.click();
 		Checkout.click();
 		

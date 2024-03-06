@@ -6,7 +6,7 @@
       <class name="HRS_Online_booking_portal.Tests.TC_01">
         <methods>
           <include name="launchApplication"/>
-          <include name="searchHotel" invocation-numbers="1"/>
+          <include name="searchHotel" invocation-numbers="0"/>
         </methods>
       </class> <!-- HRS_Online_booking_portal.Tests.TC_01 -->
     </classes>

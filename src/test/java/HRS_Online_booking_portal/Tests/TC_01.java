@@ -53,8 +53,9 @@ public class TC_01 extends BaseTest
 	        
 		        if(dateCheckin.equals(match))
 		        {
+		          dates.get(i).click();
 			      //System.out.println("date in if"+date);
-			      landingPage.SelectDate(date,checkoutdate);
+			      landingPage.SelectDate();
 		        }
 	        
 		    //}
