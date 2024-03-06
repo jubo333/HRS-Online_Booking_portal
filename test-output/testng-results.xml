@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-03-07T00:48:36 IST" name="Default suite" finished-at="2024-03-07T00:49:21 IST" duration-ms="45542">
+    <groups>
+    </groups>
+    <test started-at="2024-03-07T00:48:36 IST" name="Default test" finished-at="2024-03-07T00:49:21 IST" duration-ms="45542">
+      <class name="HRS_Online_booking_portal.Tests.TC_01">
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:HRS_Online_booking_portal.Tests.TC_01@15eb5ee5]" started-at="2024-03-07T00:48:36 IST" name="launchApplication" finished-at="2024-03-07T00:48:47 IST" duration-ms="11063" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="searchHotel(java.util.HashMap)[pri:0, instance:HRS_Online_booking_portal.Tests.TC_01@15eb5ee5]" started-at="2024-03-07T00:48:47 IST" name="searchHotel" data-provider="getData" finished-at="2024-03-07T00:49:02 IST" duration-ms="14677" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{name=Barcelona, checkindate=21, checkout=27}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchHotel -->
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:HRS_Online_booking_portal.Tests.TC_01@15eb5ee5]" started-at="2024-03-07T00:49:02 IST" name="launchApplication" finished-at="2024-03-07T00:49:07 IST" duration-ms="5682" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="searchHotel(java.util.HashMap)[pri:0, instance:HRS_Online_booking_portal.Tests.TC_01@15eb5ee5]" started-at="2024-03-07T00:49:07 IST" name="searchHotel" data-provider="getData" finished-at="2024-03-07T00:49:21 IST" duration-ms="13697" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{name=Barcelona, checkindate=23, checkout=29}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchHotel -->
+      </class> <!-- HRS_Online_booking_portal.Tests.TC_01 -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

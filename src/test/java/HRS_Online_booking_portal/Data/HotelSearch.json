@@ -1,0 +1,19 @@
+[
+    
+        {
+          "name" : "Barcelona",
+          "checkindate": "21",
+          "checkout" : "27"
+            
+        },
+        
+        {
+            "name" : "Barcelona",
+            "checkindate": "23",
+            "checkout" : "29"
+            
+        }
+        
+        
+        
+]
