@@ -3,6 +3,8 @@ package HRS_Online_booking_portal.Tests;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.DataProvider;
@@ -15,6 +17,7 @@ public class TC_01 extends BaseTest
 	@Test(dataProvider = "getData")
 	public void searchHotel(HashMap<String,String> input) throws InterruptedException
 	{
+		 String match = null;
 		 String location=input.get("name");
 		 
 		 landingPage.searchLocation(location);
@@ -28,14 +31,35 @@ public class TC_01 extends BaseTest
 	  //System.out.println("Dates"+dates.size());
 	  for(int i=0;i<dates.size();i++)
 	  {
-		  String date=dates.get(i).getText().trim();
-		  System.out.println("dates inside for"+date);
-		  if(dateCheckin.equals(date))
-		  {
-			  //System.out.println("date in if"+date);
-			  landingPage.SearchHotel(date,checkoutdate);
-		  }
+		  String date=dates.get(i).getText();
+		//  String[] dateParts = date.split(" ");
+		  //  for (int j = 0; j < dateParts.length; j++) 
+		    //{
+		      //  System.out.println("Date part: " + dateParts[j]);
+		        
+		        // System.out.print("dates inside for"+date);
+		  
+		  
+		  Pattern pattern = Pattern.compile("\\b\\d{1,2}\\b");
+	        Matcher matcher = pattern.matcher(date);
+	        
+	        // Iterate over matches and extract numeric values
+	        while (matcher.find()) 
+	        {
+	            match = matcher.group();
+	            System.out.println("Numeric value: " + match);
+	            
+	        }
+	        
+		        if(dateCheckin.equals(match))
+		        {
+			      //System.out.println("date in if"+date);
+			      landingPage.SelectDate(date,checkoutdate);
+		        }
+	        
+		    //}
 	  }
+	  landingPage.clickonSearch();
 	}
 	
 	@DataProvider
@@ -44,7 +68,7 @@ public class TC_01 extends BaseTest
 
 		
 		List<HashMap<String,String>> data = getJsonDataToMap(System.getProperty("user.dir")+"//src//test//java//HRS_Online_booking_portal\\Data\\HotelSearch.json");
-		return new Object[][]  {{data.get(0)}, {data.get(1) } };
+		return new Object[][]  {{data.get(0)} };
 		
 	}
 

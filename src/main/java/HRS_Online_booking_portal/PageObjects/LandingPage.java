@@ -42,7 +42,7 @@ WebDriver driver;
 	@FindBy(id="#SearchHotelsButton")
 	WebElement SearchButton;
 	
-	@FindBy(xpath="//div[@class='Month_week__C_XUi']")
+	@FindBy(xpath="//div[@class='Month_container__UMd24 Calendar_month__ywpCk']")
 	List<WebElement> CalenderDates;
 	
 	@FindBy(css=".Month_title__m8iWe")
@@ -71,16 +71,21 @@ WebDriver driver;
 		Checkin.click();
 	}
 	
-	public void SearchHotel(String Checkindate,String CheckOutDates) throws InterruptedException
+	public void SelectDate(String Checkindate,String CheckOutDates) throws InterruptedException
 	{
 		
 		Thread.sleep(2000);
 		Checkin.click();
 		Checkout.click();
-		Checkout.sendKeys(CheckOutDates);
+		Checkout.click();
+		
+		
+		
+	}
+	
+	public void clickonSearch()
+	{
 		SearchButton.click();
-		
-		
 	}
 	
 	public List<WebElement> getDates()
