@@ -19,16 +19,20 @@ public class TC_01 extends BaseTest
 		 
 		 landingPage.searchLocation(location);
 		 
-		 String dateCheckin = input.get("checkindate");
+		 String dateCheckin = input.get("checkindate").trim();
+		// System.out.println("CheckinDate"+dateCheckin);
 		 
 		 String checkoutdate =input.get("checkout");
 		
 	  List<WebElement> dates= landingPage.getDates();
+	  //System.out.println("Dates"+dates.size());
 	  for(int i=0;i<dates.size();i++)
 	  {
-		  String date=dates.get(i).getText();
-		  if(date.equalsIgnoreCase(dateCheckin))
+		  String date=dates.get(i).getText().trim();
+		  System.out.println("dates inside for"+date);
+		  if(dateCheckin.equals(date))
 		  {
+			  //System.out.println("date in if"+date);
 			  landingPage.SearchHotel(date,checkoutdate);
 		  }
 	  }

@@ -41,23 +41,23 @@ WebDriver driver;
 	
 	@FindBy(id="#SearchHotelsButton")
 	WebElement SearchButton;
-
-	@FindBy(css=".Calendar_container__yInee")
+	
+	@FindBy(xpath="//div[@class='Month_week__C_XUi']")
 	List<WebElement> CalenderDates;
 	
 	@FindBy(css=".Month_title__m8iWe")
 	List<WebElement> MonthName;
 	
-	public List<WebElement> getDates()
-	{
-		return CalenderDates;
-	}
 	
 	@FindBy(xpath="//button[@id='onetrust-accept-btn-handler']")
 	WebElement Acceptcookie;
 	
 	@FindBy(xpath="//li[@data-test='DestinationList_suggestionItem']")
 	WebElement locationsuggest;
+	
+	
+	
+	//-----------------------Actions----------------------------------------//
 
 	public void searchLocation(String StyLoc) throws InterruptedException
 	{
@@ -67,19 +67,28 @@ WebDriver driver;
 		StayLocationInput.sendKeys(StyLoc);
 		Thread.sleep(2000);
 		locationsuggest.click();
+		Thread.sleep(1000);
+		Checkin.click();
 	}
 	
-	public void SearchHotel(String Checkindate,String CheckOutDates)
+	public void SearchHotel(String Checkindate,String CheckOutDates) throws InterruptedException
 	{
 		
+		Thread.sleep(2000);
 		Checkin.click();
-		Checkin.sendKeys(Checkindate);
 		Checkout.click();
 		Checkout.sendKeys(CheckOutDates);
 		SearchButton.click();
 		
 		
 	}
+	
+	public List<WebElement> getDates()
+	{
+		
+		return CalenderDates;
+	}
+	
 	
 	
 	

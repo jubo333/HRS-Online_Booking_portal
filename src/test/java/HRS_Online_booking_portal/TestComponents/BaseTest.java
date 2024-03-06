@@ -53,7 +53,7 @@ public class BaseTest
 		   
 	    else if (browserName.equalsIgnoreCase("firefox")) {
 			System.setProperty("webdriver.gecko.driver",
-					"/Users/rahulshetty//documents//geckodriver");
+					"/Users/shree//documents//geckodriver");
 			driver = new FirefoxDriver();
 			// Firefox
 		} else if (browserName.equalsIgnoreCase("edge")) {
@@ -68,7 +68,7 @@ public class BaseTest
 
 	}
 	
-	public String getScreenshot(String testCaseName,WebDriver driver) throws IOException
+	/*public String getScreenshot(String testCaseName,WebDriver driver) throws IOException
 	{
 		TakesScreenshot ts = (TakesScreenshot)driver;
 		File source = ts.getScreenshotAs(OutputType.FILE);
@@ -77,7 +77,9 @@ public class BaseTest
 		return System.getProperty("user.dir") + "//reports//" + testCaseName + ".png";
 		
 		
-	}
+	}*/
+	
+	
 	@BeforeMethod
 	public LandingPage launchApplication() throws IOException, InterruptedException
 	{
